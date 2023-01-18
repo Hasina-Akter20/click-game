@@ -14,6 +14,7 @@ function reloadAll() {
 function reset() {
   if (counter < 10) {
     showText.innerText = "Ops, You Lose The Game";
+    showText.style.color = "red";
     setTimeout(reloadAll, 3000);
   }
 }
@@ -33,6 +34,7 @@ function clickedCount() {
   showText.innerText = counter;
   if (counter == 10) {
     showText.innerText = "Congrass! You won the game ";
+    showText.style.color = "green";
     clearDisply();
     setTimeout(reloadAll, 4000);
   }
