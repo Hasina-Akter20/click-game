@@ -1,0 +1,31 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+.box-style {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bolder;
+}
+button {
+  border: none;
+  color: white;
+  background-color: gray;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0px 5px;
+}
+button:hover {
+  background-color: rgb(95, 95, 95);
+}
