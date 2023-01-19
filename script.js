@@ -20,7 +20,7 @@ function gameOver() {
 }
 function reset() {
   if (counter < 10) {
-    showText.innerText = "OPS, You Lose The Game";
+    showText.innerText = "OPS, You Lose The Game.";
     showText.style.color = "red";
 
     gameOver();
@@ -38,7 +38,7 @@ function clickedCount() {
   }
   showText.innerText = counter;
   if (counter == 10) {
-    showText.innerText = "Congrass! You won the game ";
+    showText.innerText = "Congrass! You Won The Game.";
     showText.style.color = "green";
     gameOver();
   }
