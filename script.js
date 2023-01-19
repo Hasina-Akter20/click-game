@@ -1,30 +1,34 @@
 let showText = document.querySelector("h1");
+let indicator = document.querySelector("p");
+let button = document.querySelector(".button-group");
 let counter = 0;
 let gameStarted = false;
-
-function clearDisply() {
-  let button = document.querySelector(".button-group");
-  button.style.display = "none";
-}
 
 function reloadAll() {
   location.reload();
 }
 
+function started() {
+  indicator.innerText = "GO...";
+  gameStarted = true;
+}
+function gameOver() {
+  indicator.innerText = "Game over.";
+  gameStarted = false;
+  button.style.display = "none";
+  setTimeout(reloadAll, 4000);
+}
 function reset() {
   if (counter < 10) {
-    clearDisply();
-    showText.innerText = "Ops, You Lose The Game";
-    gameStarted = false;
+    showText.innerText = "OPS, You Lose The Game";
     showText.style.color = "red";
-    setTimeout(reloadAll, 3000);
+
+    gameOver();
   }
 }
 
-console.log(counter);
-
 function playGame() {
-  gameStarted = true;
+  started();
   setTimeout(reset, 2000);
 }
 
@@ -32,13 +36,10 @@ function clickedCount() {
   if (gameStarted) {
     counter++;
   }
-
   showText.innerText = counter;
   if (counter == 10) {
     showText.innerText = "Congrass! You won the game ";
-    gameStarted = false;
     showText.style.color = "green";
-    clearDisply();
-    setTimeout(reloadAll, 4000);
+    gameOver();
   }
 }
